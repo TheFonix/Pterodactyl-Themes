@@ -1,3 +1,5 @@
+#!/bin/bash
+
 if [ ! -f artisan ]; then
     echo "Could not find the Artisan file, this normally means you are not in the correct directory! Please go to the root installation of your panel and re-run this script! Thanks"
 
