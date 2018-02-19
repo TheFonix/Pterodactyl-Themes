@@ -25,6 +25,6 @@ if [ ! -f artisan ]; then
 
     cd .. && rm -rf tempdown
 
-    echo "Complete! Have a good day and dont forget to refresh your browser cache! "
-    echo "~Fonix"
+    echo "Complete! Have a good day and dont forget to refresh your browser cache!"
+    echo "Fonix"
 fi
