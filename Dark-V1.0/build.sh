@@ -14,7 +14,7 @@ if [ ! -f artisan ]; then
     zip -r PanelBackup-$(date +"%Y-%m-%d").zip public resources
 
     echo "Downloading the Theme you picked"
-    mkdir -p tempdown && && cd tempdown && git clone https://github.com/TheFonix/Pterodactyl-Themes.git . 
+    mkdir -p tempdown && cd tempdown && git clone https://github.com/TheFonix/Pterodactyl-Themes.git . 
     cp -r Dark-V1.0/public .. 
     cp -r Dark-V1.0/resources .. 
 
