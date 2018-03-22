@@ -10,6 +10,12 @@ Each Theme has a small code snippet that you must run inside the Pterodactyl pan
 ## Themes Ready for you to use:
 ### Graphite
 A Simple Change from Blue to Black!
-
-
+![](https://raw.githubusercontent.com/TheFonix/Pterodactyl-Themes/master/Pterodactyl-7/Graphite/screenshots/1.png)
+![](https://raw.githubusercontent.com/TheFonix/Pterodactyl-Themes/master/Pterodactyl-7/Graphite/screenshots/2.png)
+![](https://raw.githubusercontent.com/TheFonix/Pterodactyl-Themes/master/Pterodactyl-7/Graphite/screenshots/3.png)
+To Install Run the following command in the Panel Directory! 
+```
+curl https://raw.githubusercontent.com/TheFonix/Pterodactyl-Themes/master/Pterodactyl-7/Graphite/build.sh | sh
+```
+## More Coming Soon!
 
