@@ -66,7 +66,7 @@
                 <div class="box-footer">
                     {!! csrf_field() !!}
                     {!! method_field('PATCH') !!}
-                    <input value="Update User (Disabled)" class="btn btn-primary btn-sm">
+                    <input type="submit" value="Update User" class="btn btn-primary btn-sm">
                 </div>
             </div>
         </div>
@@ -163,7 +163,7 @@
                 <form action="{{ route('admin.users.view', $user->id) }}" method="POST">
                     {!! csrf_field() !!}
                     {!! method_field('DELETE') !!}
-                    <input  class="btn btn-sm btn-danger pull-right" value="Delete User (Disabled)" />
+                    <input id="delete" type="submit" class="btn btn-sm btn-danger pull-right" {{ $user->servers->count() < 1 ?: 'disabled' }} value="Delete User" />
                 </form>
             </div>
         </div>
