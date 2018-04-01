@@ -17,42 +17,131 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
-var CONSOLE_PUSH_COUNT = Pterodactyl.config.console_count || 10;
+var CONSOLE_PUSH_COUNT = Pterodactyl.config.console_count || 50;
 var CONSOLE_PUSH_FREQ = Pterodactyl.config.console_freq || 200;
 var CONSOLE_OUTPUT_LIMIT = Pterodactyl.config.console_limit || 2000;
-var InitialLogSent = false;
+
+var KEYCODE_UP_ARROW = 38;
+var KEYCODE_DOWN_ARROW = 40;
+
+var AnsiUp = new AnsiUp;
+AnsiUp.use_classes = true;
+
+var $terminal = $('#terminal');
+var $terminalInput = $('.terminal_input--input');
+var $scrollNotify = $('#terminalNotify');
+
+$(document).ready(function () {
+    var storage = window.localStorage;
+    var activeHx = [];
+    var currentHxIndex = 0;
+    var currentKeyCount = 0;
+
+    var storedConsoleHistory = storage.getItem('console_hx_' + Pterodactyl.server.uuid);
+    try {
+        activeHx = JSON.parse(storedConsoleHistory) || [];
+        currentKeyCount = activeHx.length - 1;
+    } catch (ex) {
+        //
+    }
+
+    $terminalInput.focus();
+    $('.terminal_input--prompt, #terminal_input, #terminalNotify').on('click', function () {
+        $terminalInput.focus();
+    });
+
+    $terminalInput.on('keyup', function (e) {
+        if (e.which === KEYCODE_DOWN_ARROW || e.which === KEYCODE_UP_ARROW) {
+            var value = consoleHistory(e.which);
+
+            if (value !== false) {
+                $terminalInput.val(value);
+            }
+        }
+
+        if (e.which === 27) {
+            $(this).val('');
+        }
+
+        if (e.which === 13) {
+            saveToHistory($(this).val());
+            Socket.emit((ConsoleServerStatus !== 0) ? 'send command' : 'set status', $(this).val());
+
+            $(this).val('');
+        }
+    });
+
+    function consoleHistory(key) {
+        // Get previous
+        if (key === KEYCODE_UP_ARROW) {
+            // currentHxIndex++;
+            var index = activeHx.length - (currentHxIndex + 1);
+
+            if (typeof activeHx[index - 1] === 'undefined') {
+                return activeHx[index];
+            }
+
+            currentHxIndex++;
+            return activeHx[index];
+        }
+
+        // Get more recent
+        if (key === KEYCODE_DOWN_ARROW) {
+            var index = activeHx.length - currentHxIndex;
+
+            if (typeof activeHx[index + 1] === 'undefined') {
+                return activeHx[index];
+            }
+
+            currentHxIndex--;
+            return activeHx[index];
+        }
+    }
+
+    function saveToHistory(command) {
+        if (command.length === 0) {
+            return;
+        }
+
+        if (activeHx.length >= 50) {
+            activeHx.pop();
+        }
+
+        currentHxIndex = 0;
+        currentKeyCount++;
+        activeHx[currentKeyCount] = command;
+
+        storage.setItem('console_hx_' + Pterodactyl.server.uuid, JSON.stringify(activeHx));
+    }
+});
+
+$terminal.on('scroll', function () {
+    if (isTerminalScrolledDown()) {
+        $scrollNotify.addClass('hidden');
+    }
+});
+
+function isTerminalScrolledDown() {
+    return $terminal.scrollTop() + $terminal.innerHeight() + 50 > $terminal[0].scrollHeight;
+}
+
+window.scrollToBottom = function () {
+    $terminal.scrollTop($terminal[0].scrollHeight);
+};
+
+function pushToTerminal(string) {
+    $terminal.append('<div class="cmd">' + AnsiUp.ansi_to_html(string + '\u001b[0m') + '</div>');
+}
 
 (function initConsole() {
     window.TerminalQueue = [];
     window.ConsoleServerStatus = 0;
-    window.Terminal = $('#terminal').terminal(function (command, term) {
-        Socket.emit((ConsoleServerStatus !== 0) ? 'send command' : 'set status', command);
-    }, {
-        greetings: '',
-        name: Pterodactyl.server.uuid,
-        height: 450,
-        exit: false,
-        echoCommand: false,
-        outputLimit: CONSOLE_OUTPUT_LIMIT,
-        prompt: Pterodactyl.server.username + ':~$ ',
-        scrollOnEcho: false,
-        scrollBottomOffset: 5,
-        onBlur: function (terminal) {
-            return false;
-        }
+    window.ConsoleElements = 0;
+
+    $scrollNotify.on('click', function () {
+        window.scrollToBottom();
+        $scrollNotify.addClass('hidden');
     });
-
-    window.TerminalNotifyElement = $('#terminalNotify');
-    TerminalNotifyElement.on('click', function () {
-        Terminal.scroll_to_bottom();
-        TerminalNotifyElement.addClass('hidden');
-    })
-
-    Terminal.on('scroll', function () {
-        if (Terminal.is_bottom()) {
-            TerminalNotifyElement.addClass('hidden');
-        }
-    })
 })();
 
 (function pushOutputQueue() {
@@ -61,17 +150,25 @@ var InitialLogSent = false;
     }
 
     if (TerminalQueue.length > 0) {
+        var scrolledDown = isTerminalScrolledDown();
+
         for (var i = 0; i < CONSOLE_PUSH_COUNT && TerminalQueue.length > 0; i++) {
-            Terminal.echo(TerminalQueue[0], { flush: false });
+            pushToTerminal(TerminalQueue[0]);
+
+            window.ConsoleElements++;
             TerminalQueue.shift();
         }
 
-        // Flush after looping through all.
-        Terminal.flush();
+        if (scrolledDown) {
+            window.scrollToBottom();
+        } else if ($scrollNotify.hasClass('hidden')) {
+            $scrollNotify.removeClass('hidden');
+        }
 
-        // Show Warning
-        if (! Terminal.is_bottom()) {
-            TerminalNotifyElement.removeClass('hidden');
+        var removeElements = window.ConsoleElements - CONSOLE_OUTPUT_LIMIT;
+        if (removeElements > 0) {
+            $('#terminal').find('.cmd').slice(0, removeElements).remove();
+            window.ConsoleElements = window.ConsoleElements - removeElements;
         }
     }
 
@@ -82,12 +179,10 @@ var InitialLogSent = false;
     // Update Listings on Initial Status
     Socket.on('initial status', function (data) {
         ConsoleServerStatus = data.status;
-        if (! InitialLogSent) {
-            updateServerPowerControls(data.status);
+        updateServerPowerControls(data.status);
 
-            if (data.status === 1 || data.status === 2) {
-                Socket.emit('send server log');
-            }
+        if (data.status === 1 || data.status === 2) {
+            Socket.emit('send server log');
         }
     });
 
@@ -97,19 +192,24 @@ var InitialLogSent = false;
         updateServerPowerControls(data.status);
     });
 
+    // Skips the queue so we don't wait
+    // 10 minutes to load the log...
     Socket.on('server log', function (data) {
-        if (! InitialLogSent) {
-            Terminal.clear();
-            TerminalQueue.push(data);
-            InitialLogSent = true;
-        }
+        $('#terminal').html('');
+        data.split(/\n/g).forEach(function (item) {
+            pushToTerminal(item);
+        });
+        window.scrollToBottom();
     });
 
     Socket.on('console', function (data) {
-        TerminalQueue.push(data.line);
+        if(data.line) {
+            data.line.split(/\n/g).forEach(function (item) {
+                TerminalQueue.push(item);
+            });
+        }
     });
 })();
-
 
 function updateServerPowerControls (data) {
     // Server is On or Starting
@@ -171,17 +271,17 @@ $(document).ready(function () {
                         label: "Percent Use",
                         fill: false,
                         lineTension: 0.03,
-                        backgroundColor: "#3c8dbc",
-                        borderColor: "#3c8dbc",
+                        backgroundColor: "#191d24",
+                        borderColor: "#191d24",
                         borderCapStyle: 'butt',
                         borderDash: [],
                         borderDashOffset: 0.0,
                         borderJoinStyle: 'miter',
-                        pointBorderColor: "#3c8dbc",
+                        pointBorderColor: "#191d24",
                         pointBackgroundColor: "#fff",
                         pointBorderWidth: 1,
                         pointHoverRadius: 5,
-                        pointHoverBackgroundColor: "#3c8dbc",
+                        pointHoverBackgroundColor: "#191d24",
                         pointHoverBorderColor: "rgba(220,220,220,1)",
                         pointHoverBorderWidth: 2,
                         pointRadius: 1,
@@ -216,17 +316,17 @@ $(document).ready(function () {
                         label: "Memory Use",
                         fill: false,
                         lineTension: 0.03,
-                        backgroundColor: "#3c8dbc",
-                        borderColor: "#3c8dbc",
+                        backgroundColor: "#191d24",
+                        borderColor: "#191d24",
                         borderCapStyle: 'butt',
                         borderDash: [],
                         borderDashOffset: 0.0,
                         borderJoinStyle: 'miter',
-                        pointBorderColor: "#3c8dbc",
+                        pointBorderColor: "#191d24",
                         pointBackgroundColor: "#fff",
                         pointBorderWidth: 1,
                         pointHoverRadius: 5,
-                        pointHoverBackgroundColor: "#3c8dbc",
+                        pointHoverBackgroundColor: "#191d24",
                         pointHoverBorderColor: "rgba(220,220,220,1)",
                         pointHoverBorderWidth: 2,
                         pointRadius: 1,

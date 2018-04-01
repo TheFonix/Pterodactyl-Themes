@@ -43,7 +43,7 @@
 
     var notifySocketError = false;
     // Main Socket Object
-    window.Socket = io(Pterodactyl.node.scheme + '://' + Pterodactyl.node.fqdn + ':' + Pterodactyl.node.daemonListen + '/stats/', {
+    window.Socket = io(Pterodactyl.node.scheme + '://' + Pterodactyl.node.fqdn + ':' + Pterodactyl.node.daemonListen + '/v1/stats/', {
         'query': 'token=' + Pterodactyl.node.daemonSecret,
     });
 
@@ -79,7 +79,7 @@
                     element.find('[data-action="status"]').html('<span class="label label-danger">Offline</span>');
                     break;
                 case 1:
-                    element.find('[data-action="status"]').html('<img src="https://www.newvoicemedia.com/assets/img/icon__tick-circle--green.svg">');
+                    element.find('[data-action="status"]').html('<span class="label label-success">Online</span>');
                     break;
                 case 2:
                     element.find('[data-action="status"]').html('<span class="label label-info">Starting</span>');

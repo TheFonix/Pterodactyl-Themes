@@ -1,28 +1,14 @@
+{{-- Pterodactyl - Panel --}}
 {{-- Copyright (c) 2015 - 2017 Dane Everitt <dane@daneeveritt.com> --}}
 
-{{-- Permission is hereby granted, free of charge, to any person obtaining a copy --}}
-{{-- of this software and associated documentation files (the "Software"), to deal --}}
-{{-- in the Software without restriction, including without limitation the rights --}}
-{{-- to use, copy, modify, merge, publish, distribute, sublicense, and/or sell --}}
-{{-- copies of the Software, and to permit persons to whom the Software is --}}
-{{-- furnished to do so, subject to the following conditions: --}}
-
-{{-- The above copyright notice and this permission notice shall be included in all --}}
-{{-- copies or substantial portions of the Software. --}}
-
-{{-- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR --}}
-{{-- IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, --}}
-{{-- FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE --}}
-{{-- AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER --}}
-{{-- LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, --}}
-{{-- OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE --}}
-{{-- SOFTWARE. --}}
+{{-- This software is licensed under the terms of the MIT license. --}}
+{{-- https://opensource.org/licenses/MIT --}}
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>{{ Settings::get('company', 'Pterodactyl') }} - @yield('title')</title>
+        <title>{{ config('app.name', 'Pterodactyl') }} - @yield('title')</title>
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
         <meta name="_token" content="{{ csrf_token() }}">
 
@@ -31,20 +17,20 @@
         <link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
         <link rel="manifest" href="/favicons/manifest.json">
         <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#bc6e3c">
-        <link href="https://fonix.online/favicons/favicon.ico" rel="icon">
+        <link rel="shortcut icon" href="/favicons/favicon.ico">
         <meta name="msapplication-config" content="/favicons/browserconfig.xml">
-        <meta name="theme-color" content="#af7a00">
+        <meta name="theme-color" content="#2b313a">
 
         @include('layouts.scripts')
 
         @section('scripts')
-            {!! Theme::css('vendor/select2/select2.min.css') !!}
-            {!! Theme::css('vendor/bootstrap/bootstrap.min.css') !!}
-            {!! Theme::css('vendor/adminlte/admin.min.css') !!}
-            {!! Theme::css('vendor/adminlte/colors/skin-blue.min.css') !!}
-            {!! Theme::css('vendor/sweetalert/sweetalert.min.css') !!}
-            {!! Theme::css('vendor/animate/animate.min.css') !!}
-            {!! Theme::css('css/pterodactyl.css') !!}
+            {!! Theme::css('vendor/select2/select2.min.css?t={cache-version}') !!}
+            {!! Theme::css('vendor/bootstrap/bootstrap.min.css?t={cache-version}') !!}
+            {!! Theme::css('vendor/adminlte/admin.min.css?t={cache-version}') !!}
+            {!! Theme::css('vendor/adminlte/colors/skin-blue.min.css?t={cache-version}') !!}
+            {!! Theme::css('vendor/sweetalert/sweetalert.min.css?t={cache-version}') !!}
+            {!! Theme::css('vendor/animate/animate.min.css?t={cache-version}') !!}
+            {!! Theme::css('css/pterodactyl.css?t={cache-version}') !!}
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
 
@@ -58,10 +44,10 @@
         <div class="wrapper">
             <header class="main-header">
                 <a href="{{ route('index') }}" class="logo">
-                    <span>{{ Settings::get('company', 'Pterodactyl') }}</span>
+                    <span>{{ config('app.name', 'Pterodactyl') }}</span>
                 </a>
                 <nav class="navbar navbar-static-top">
-                    <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                    <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -69,8 +55,8 @@
                     </a>
                     <div class="navbar-custom-menu">
                         <ul class="nav navbar-nav">
-                            <li class="dropdown user-menu">
-                                <a href="{{ route('account') }}" class="dropdown-toggle" data-toggle="dropdown">
+                            <li class="user-menu">
+                                <a href="{{ route('account') }}">
                                     <img src="https://www.gravatar.com/avatar/{{ md5(strtolower(Auth::user()->email)) }}?s=160" class="user-image" alt="User Image">
                                     <span class="hidden-xs">{{ Auth::user()->name_first }} {{ Auth::user()->name_last }}</span>
                                 </a>
@@ -79,7 +65,7 @@
                                 <li><a href="{{ route('index') }}" data-toggle="tooltip" data-placement="bottom" title="Exit Admin Control"><i class="fa fa-server"></i></a></li>
                             </li>
                             <li>
-                                <li><a href="{{ route('auth.logout') }}" data-toggle="tooltip" data-placement="bottom" title="Logout"><i class="fa fa-power-off"></i></a></li>
+                                <li><a href="{{ route('auth.logout') }}" id="logoutButton" data-toggle="tooltip" data-placement="bottom" title="Logout"><i class="fa fa-sign-out"></i></a></li>
                             </li>
                         </ul>
                     </div>
@@ -97,6 +83,11 @@
                         <li class="{{ ! starts_with(Route::currentRouteName(), 'admin.settings') ?: 'active' }}">
                             <a href="{{ route('admin.settings')}}">
                                 <i class="fa fa-wrench"></i> <span>Settings</span>
+                            </a>
+                        </li>
+                        <li class="{{ ! starts_with(Route::currentRouteName(), 'admin.api') ?: 'active' }}">
+                            <a href="{{ route('admin.api.index')}}">
+                                <i class="fa fa-gamepad"></i> <span>Application API</span>
                             </a>
                         </li>
                         <li class="header">MANAGEMENT</li>
@@ -126,9 +117,9 @@
                             </a>
                         </li>
                         <li class="header">SERVICE MANAGEMENT</li>
-                        <li class="{{ ! starts_with(Route::currentRouteName(), 'admin.services') ?: 'active' }}">
-                            <a href="{{ route('admin.services') }}">
-                                <i class="fa fa-th-large"></i> <span>Services</span>
+                        <li class="{{ ! starts_with(Route::currentRouteName(), 'admin.nests') ?: 'active' }}">
+                            <a href="{{ route('admin.nests') }}">
+                                <i class="fa fa-th-large"></i> <span>Nests</span>
                             </a>
                         </li>
                         <li class="{{ ! starts_with(Route::currentRouteName(), 'admin.packs') ?: 'active' }}">
@@ -147,7 +138,7 @@
                     <div class="row">
                         <div class="col-xs-12">
                             @if (count($errors) > 0)
-                                <div class="callout callout-danger">
+                                <div class="alert alert-danger">
                                     @lang('base.validation_error')<br><br>
                                     <ul>
                                         @foreach ($errors->all() as $error)
@@ -158,7 +149,7 @@
                             @endif
                             @foreach (Alert::getMessages() as $type => $messages)
                                 @foreach ($messages as $message)
-                                    <div class="callout callout-{{ $type }} alert-dismissable" role="alert">
+                                    <div class="alert alert-{{ $type }} alert-dismissable" role="alert">
                                         {!! $message !!}
                                     </div>
                                 @endforeach
@@ -173,24 +164,50 @@
                     <strong><i class="fa fa-fw {{ $appIsGit ? 'fa-git-square' : 'fa-code-fork' }}"></i></strong> {{ $appVersion }}<br />
                     <strong><i class="fa fa-fw fa-clock-o"></i></strong> {{ round(microtime(true) - LARAVEL_START, 3) }}s
                 </div>
-                Copyright &copy; 2015 - {{ date('Y') }} <a href="https://pterodactyl.io/">Pterodactyl Software</a> - Theme:<a href="https://github.com/TheFonix"> Fonix</a>
+                Copyright &copy; 2015 - {{ date('Y') }} <a href="https://pterodactyl.io/">Pterodactyl Software</a>. | Theme: <a href="https://fonix.online/">Fonix</a>
             </footer>
         </div>
         @section('footer-scripts')
-            {!! Theme::js('vendor/terminal/keyboard.polyfill.js') !!}
+            {!! Theme::js('js/keyboard.polyfill.js') !!}
             <script>keyboardeventKeyPolyfill.polyfill();</script>
 
-            {!! Theme::js('js/laroute.js') !!}
-            {!! Theme::js('vendor/jquery/jquery.min.js') !!}
-            {!! Theme::js('vendor/sweetalert/sweetalert.min.js') !!}
-            {!! Theme::js('vendor/bootstrap/bootstrap.min.js') !!}
-            {!! Theme::js('vendor/slimscroll/jquery.slimscroll.min.js') !!}
-            {!! Theme::js('vendor/adminlte/app.min.js') !!}
-            {!! Theme::js('vendor/socketio/socket.io.min.js') !!}
-            {!! Theme::js('vendor/bootstrap-notify/bootstrap-notify.min.js') !!}
-            {!! Theme::js('vendor/select2/select2.full.min.js') !!}
-            {!! Theme::js('js/admin/functions.js') !!}
-            {!! Theme::js('js/autocomplete.js') !!}
+            {!! Theme::js('js/laroute.js?t={cache-version}') !!}
+            {!! Theme::js('vendor/jquery/jquery.min.js?t={cache-version}') !!}
+            {!! Theme::js('vendor/sweetalert/sweetalert.min.js?t={cache-version}') !!}
+            {!! Theme::js('vendor/bootstrap/bootstrap.min.js?t={cache-version}') !!}
+            {!! Theme::js('vendor/slimscroll/jquery.slimscroll.min.js?t={cache-version}') !!}
+            {!! Theme::js('vendor/adminlte/app.min.js?t={cache-version}') !!}
+            {!! Theme::js('vendor/socketio/socket.io.v203.min.js?t={cache-version}') !!}
+            {!! Theme::js('vendor/bootstrap-notify/bootstrap-notify.min.js?t={cache-version}') !!}
+            {!! Theme::js('vendor/select2/select2.full.min.js?t={cache-version}') !!}
+            {!! Theme::js('js/admin/functions.js?t={cache-version}') !!}
+            {!! Theme::js('js/autocomplete.js?t={cache-version}') !!}
+
+            @if(Auth::user()->root_admin)
+                <script>
+                    $('#logoutButton').on('click', function (event) {
+                        event.preventDefault();
+
+                        var that = this;
+                        swal({
+                            title: 'Do you want to log out?',
+                            type: 'warning',
+                            showCancelButton: true,
+                            confirmButtonColor: '#d9534f',
+                            cancelButtonColor: '#d33',
+                            confirmButtonText: 'Log out'
+                        }, function () {
+                            window.location = $(that).attr('href');
+                        });
+                    });
+                </script>
+            @endif
+
+            <script>
+                $(function () {
+                    $('[data-toggle="tooltip"]').tooltip();
+                })
+            </script>
         @show
     </body>
 </html>

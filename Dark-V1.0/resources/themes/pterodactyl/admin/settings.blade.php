@@ -24,7 +24,7 @@
 @endsection
 
 @section('content-header')
-    <h1>Panel Settings<small>Configure to your liking.</small></h1>
+    <h1>Panel Settings<small>Configure Pterodactyl to your liking.</small></h1>
     <ol class="breadcrumb">
         <li><a href="{{ route('admin.index') }}">Admin</a></li>
         <li class="active">Settings</li>
@@ -61,7 +61,7 @@
                                     <option value="pt" @if(Settings::get('default_language') === 'pt')selected @endif>Portugu&ecirc;s</option>
                                     <option value="ru" @if(Settings::get('default_language') === 'ru')selected @endif>&#1088;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</option>
                                     <option value="se" @if(Settings::get('default_language') === 'se')selected @endif>Svenska</option>
-                                    <option value="zh" @if(Settings::get('default_language') === 'zh')selected @endif>&#20013;&rgba(8, 8, 8, 0.75)!important;69;&#30340;的</option>
+                                    <option value="zh" @if(Settings::get('default_language') === 'zh')selected @endif>&#20013;&#22269;&#30340;的</option>
                                 </select>
                                 <p class="text-muted"><small>This is the default language that all clients will use unless they manually change it.</small></p>
                             </div>

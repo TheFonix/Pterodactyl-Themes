@@ -1,11 +1,4 @@
 <?php
-/**
- * Pterodactyl - Panel
- * Copyright (c) 2015 - 2017 Dane Everitt <dane@daneeveritt.com>.
- *
- * This software is licensed under the terms of the MIT license.
- * https://opensource.org/licenses/MIT
- */
 
 return [
     'location' => [
@@ -44,6 +37,10 @@ return [
     ],
     'server' => [
         'rebuild_failed' => 'Rebuild request for ":name" (#:id) on node ":node" failed with error: :message',
+        'power' => [
+            'confirm' => 'You are about to perform a :action aganist :count servers. Do you wish to continue?',
+            'action_failed' => 'Power action request for ":name" (#:id) on node ":node" failed with error: :message',
+        ],
     ],
     'environment' => [
         'mail' => [
@@ -74,18 +71,22 @@ return [
             'try_again' => 'Go back and try again?',
         ],
         'app' => [
+            'settings' => 'Enable UI based settings editor?',
+            'author' => 'Egg Author Email',
+            'author_help' => 'Provide the email address that eggs exported by this Panel should be from. This should be a valid email address.',
             'app_url_help' => 'The application URL MUST begin with https:// or http:// depending on if you are using SSL or not. If you do not include the scheme your emails and other content will link to the wrong location.',
             'app_url' => 'Application URL',
             'timezone_help' => 'The timezone should match one of PHP\'s supported timezones. If you are unsure, please reference http://php.net/manual/en/timezones.php.',
             'timezone' => 'Application Timezone',
             'cache_driver' => 'Cache Driver',
             'session_driver' => 'Session Driver',
+            'queue_driver' => 'Queue Driver',
             'using_redis' => 'You\'ve selected the Redis driver for one or more options, please provide valid connection information below. In most cases you can use the defaults provided unless you have modified your setup.',
             'redis_host' => 'Redis Host',
             'redis_password' => 'Redis Password',
+            'redis_pass_help' => 'By default a Redis server instance has no password as it is running locally and inaccessable to the outside world. If this is the case, simply hit enter without entering a value.',
             'redis_port' => 'Redis Port',
             'redis_pass_defined' => 'It seems a password is already defined for Redis, would you like to change it?',
-            'redis_pass_help' => 'By default a Redis server instance has no password as it is running locally and inaccessable to the outside world. If this is the case, simply hit enter without entering a value.',
         ],
     ],
 ];

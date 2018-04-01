@@ -19,6 +19,7 @@
 // SOFTWARE.
 
 $(document).ready(function () {
+    $('[data-toggle="tooltip"]').tooltip();
     $('[data-action="delete-schedule"]').click(function () {
         var self = $(this);
         swal({
@@ -34,7 +35,7 @@ $(document).ready(function () {
         }, function () {
             $.ajax({
                 method: 'DELETE',
-                url: Router.route('server.schedules.delete', {
+                url: Router.route('server.schedules.view', {
                     server: Pterodactyl.server.uuidShort,
                     schedule: self.data('schedule-id'),
                 }),
@@ -54,6 +55,45 @@ $(document).ready(function () {
                     type: 'error',
                     title: 'Whoops!',
                     text: 'An error occured while attempting to delete this schedule.'
+                });
+            });
+        });
+    });
+
+    $('[data-action="trigger-schedule"]').click(function (event) {
+        event.preventDefault();
+        var self = $(this);
+        swal({
+            type: 'info',
+            title: 'Trigger Schedule',
+            text: 'This will run the selected schedule now.',
+            showCancelButton: true,
+            allowOutsideClick: true,
+            closeOnConfirm: false,
+            confirmButtonText: 'Continue',
+            showLoaderOnConfirm: true
+        }, function () {
+            $.ajax({
+                method: 'POST',
+                url: Router.route('server.schedules.trigger', {
+                    server: Pterodactyl.server.uuidShort,
+                    schedule: self.data('schedule-id'),
+                }),
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content'),
+                },
+            }).done(function (data) {
+                swal({
+                    type: 'success',
+                    title: '',
+                    text: 'Schedule has been added to the next-run queue.'
+                });
+            }).fail(function (jqXHR) {
+                console.error(jqXHR);
+                swal({
+                    type: 'error',
+                    title: 'Whoops!',
+                    text: 'An error occured while attempting to trigger this schedule.'
                 });
             });
         });

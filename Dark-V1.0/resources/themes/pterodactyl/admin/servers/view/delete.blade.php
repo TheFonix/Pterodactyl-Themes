@@ -1,22 +1,8 @@
+{{-- Pterodactyl - Panel --}}
 {{-- Copyright (c) 2015 - 2017 Dane Everitt <dane@daneeveritt.com> --}}
 
-{{-- Permission is hereby granted, free of charge, to any person obtaining a copy --}}
-{{-- of this software and associated documentation files (the "Software"), to deal --}}
-{{-- in the Software without restriction, including without limitation the rights --}}
-{{-- to use, copy, modify, merge, publish, distribute, sublicense, and/or sell --}}
-{{-- copies of the Software, and to permit persons to whom the Software is --}}
-{{-- furnished to do so, subject to the following conditions: --}}
-
-{{-- The above copyright notice and this permission notice shall be included in all --}}
-{{-- copies or substantial portions of the Software. --}}
-
-{{-- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR --}}
-{{-- IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, --}}
-{{-- FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE --}}
-{{-- AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER --}}
-{{-- LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, --}}
-{{-- OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE --}}
-{{-- SOFTWARE. --}}
+{{-- This software is licensed under the terms of the MIT license. --}}
+{{-- https://opensource.org/licenses/MIT --}}
 @extends('layouts.admin')
 
 @section('title')
@@ -66,23 +52,6 @@
                 <form action="{{ route('admin.servers.view.delete', $server->id) }}" method="POST">
                     {!! csrf_field() !!}
                     <button type="submit" class="btn btn-danger">Safely Delete This Server</button>
-                </form>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-6">
-        <div class="box">
-            <div class="box-header with-border">
-                <h3 class="box-title">(BETA) Archive and delete the server</h3>
-            </div>
-            <div class="box-body">
-                <p>This action will attempt to delete the server from both the panel and daemon. In the process the data from the server will be sent to the archive directory!</p>
-                <p class="text-danger small">Deleting a server is an irreversible action. <strong>All server data</strong> (including files and users) will be removed from the specified node and moved to the Digital Hazards Cloud!</p>
-            </div>
-            <div class="box-footer">
-                <form action="{{ route('admin.servers.view.delete', $server->id) }}" method="POST">
-                    {!! csrf_field() !!}
-                    <button type="submit" class="btn btn-danger">Archive And Delete This Server</button>
                 </form>
             </div>
         </div>

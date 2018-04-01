@@ -8,7 +8,7 @@
       }
     },
     "color": {
-      "value": "rgba(33, 33, 33, 0.77)fff"
+      "value": "#ffffff"
     },
     "shape": {
       "type": "circle",
@@ -48,7 +48,7 @@
     "line_linked": {
       "enable": true,
       "distance": 150,
-      "color": "rgba(33, 33, 33, 0.77)fff",
+      "color": "#ffffff",
       "opacity": 0.4,
       "width": 1
     },

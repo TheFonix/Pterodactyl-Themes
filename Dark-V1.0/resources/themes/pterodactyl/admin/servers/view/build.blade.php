@@ -1,22 +1,8 @@
+{{-- Pterodactyl - Panel --}}
 {{-- Copyright (c) 2015 - 2017 Dane Everitt <dane@daneeveritt.com> --}}
 
-{{-- Permission is hereby granted, free of charge, to any person obtaining a copy --}}
-{{-- of this software and associated documentation files (the "Software"), to deal --}}
-{{-- in the Software without restriction, including without limitation the rights --}}
-{{-- to use, copy, modify, merge, publish, distribute, sublicense, and/or sell --}}
-{{-- copies of the Software, and to permit persons to whom the Software is --}}
-{{-- furnished to do so, subject to the following conditions: --}}
-
-{{-- The above copyright notice and this permission notice shall be included in all --}}
-{{-- copies or substantial portions of the Software. --}}
-
-{{-- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR --}}
-{{-- IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, --}}
-{{-- FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE --}}
-{{-- AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER --}}
-{{-- LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, --}}
-{{-- OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE --}}
-{{-- SOFTWARE. --}}
+{{-- This software is licensed under the terms of the MIT license. --}}
+{{-- https://opensource.org/licenses/MIT --}}
 @extends('layouts.admin')
 
 @section('title')
@@ -66,7 +52,7 @@
                             <input type="text" name="memory" data-multiplicator="true" class="form-control" value="{{ old('memory', $server->memory) }}"/>
                             <span class="input-group-addon">MB</span>
                         </div>
-                        <p class="text-muted small">The maximum amount of memory allowed for this container. Setting this to <code>0</code> will allow unlimited memorry in a container.</p>
+                        <p class="text-muted small">The maximum amount of memory allowed for this container. Setting this to <code>0</code> will allow unlimited memory in a container.</p>
                     </div>
                     <div class="form-group">
                         <label for="swap" class="control-label">Allocated Swap</label>
@@ -103,50 +89,79 @@
             </div>
         </div>
         <div class="col-sm-7">
-            <div class="box">
-                <div class="box-header with-border">
-                    <h3 class="box-title">Allocation Management</h3>
-                </div>
-                <div class="box-body">
-                    <div class="form-group">
-                        <label for="pAllocation" class="control-label">Game Port</label>
-                        <select id="pAllocation" name="allocation_id" class="form-control">
-                            @foreach ($assigned as $assignment)
-                                <option value="{{ $assignment->id }}"
-                                    @if($assignment->id === $server->allocation_id)
-                                        selected="selected"
-                                    @endif
-                                >{{ $assignment->alias }}:{{ $assignment->port }}</option>
-                            @endforeach
-                        </select>
-                        <p class="text-muted small">The default connection address that will be used for this game server.</p>
-                    </div>
-                    <div class="form-group">
-                        <label for="pAddAllocations" class="control-label">Assign Additional Ports</label>
-                        <div>
-                            <select name="add_allocations[]" class="form-control" multiple id="pAddAllocations">
-                                @foreach ($unassigned as $assignment)
-                                    <option value="{{ $assignment->id }}">{{ $assignment->alias }}:{{ $assignment->port }}</option>
-                                @endforeach
-                            </select>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="box">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Application Feature Limits</h3>
                         </div>
-                        <p class="text-muted small">Please note that due to software limitations you cannot assign identical ports on different IPs to the same server.</p>
-                    </div>
-                    <div class="form-group">
-                        <label for="pRemoveAllocations" class="control-label">Remove Additional Ports</label>
-                        <div>
-                            <select name="remove_allocations[]" class="form-control" multiple id="pRemoveAllocations">
-                                @foreach ($assigned as $assignment)
-                                    <option value="{{ $assignment->id }}">{{ $assignment->alias }}:{{ $assignment->port }}</option>
-                                @endforeach
-                            </select>
+                        <div class="box-body">
+                            <div class="row">
+                                <div class="form-group col-xs-6">
+                                    <label for="cpu" class="control-label">Database Limit</label>
+                                    <div>
+                                        <input type="text" name="database_limit" class="form-control" value="{{ old('database_limit', $server->database_limit) }}"/>
+                                    </div>
+                                    <p class="text-muted small">The total number of databases a user is allowed to create for this server. Leave blank to allow unlimmited.</p>
+                                </div>
+                                <div class="form-group col-xs-6">
+                                    <label for="cpu" class="control-label">Allocation Limit</label>
+                                    <div>
+                                        <input type="text" name="allocation_limit" class="form-control" value="{{ old('allocation_limit', $server->allocation_limit) }}"/>
+                                    </div>
+                                    <p class="text-muted small"><strong>This feature is not currently implemented.</strong> The total number of allocations a user is allowed to create for this server. Leave blank to allow unlimited.</p>
+                                </div>
+                            </div>
                         </div>
-                        <p class="text-muted small">Simply select which ports you would like to remove from the list above. If you want to assign a port on a different IP that is already in use you can select it from the left and delete it here.</p>
                     </div>
                 </div>
-                <div class="box-footer">
-                    {!! csrf_field() !!}
-                    <button type="submit" class="btn btn-primary pull-right">Update Build Configuration</button>
+                <div class="col-xs-12">
+                    <div class="box">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Allocation Management</h3>
+                        </div>
+                        <div class="box-body">
+                            <div class="form-group">
+                                <label for="pAllocation" class="control-label">Game Port</label>
+                                <select id="pAllocation" name="allocation_id" class="form-control">
+                                    @foreach ($assigned as $assignment)
+                                        <option value="{{ $assignment->id }}"
+                                            @if($assignment->id === $server->allocation_id)
+                                                selected="selected"
+                                            @endif
+                                        >{{ $assignment->alias }}:{{ $assignment->port }}</option>
+                                    @endforeach
+                                </select>
+                                <p class="text-muted small">The default connection address that will be used for this game server.</p>
+                            </div>
+                            <div class="form-group">
+                                <label for="pAddAllocations" class="control-label">Assign Additional Ports</label>
+                                <div>
+                                    <select name="add_allocations[]" class="form-control" multiple id="pAddAllocations">
+                                        @foreach ($unassigned as $assignment)
+                                            <option value="{{ $assignment->id }}">{{ $assignment->alias }}:{{ $assignment->port }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <p class="text-muted small">Please note that due to software limitations you cannot assign identical ports on different IPs to the same server.</p>
+                            </div>
+                            <div class="form-group">
+                                <label for="pRemoveAllocations" class="control-label">Remove Additional Ports</label>
+                                <div>
+                                    <select name="remove_allocations[]" class="form-control" multiple id="pRemoveAllocations">
+                                        @foreach ($assigned as $assignment)
+                                            <option value="{{ $assignment->id }}">{{ $assignment->alias }}:{{ $assignment->port }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <p class="text-muted small">Simply select which ports you would like to remove from the list above. If you want to assign a port on a different IP that is already in use you can select it from the left and delete it here.</p>
+                            </div>
+                        </div>
+                        <div class="box-footer">
+                            {!! csrf_field() !!}
+                            <button type="submit" class="btn btn-primary pull-right">Update Build Configuration</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
