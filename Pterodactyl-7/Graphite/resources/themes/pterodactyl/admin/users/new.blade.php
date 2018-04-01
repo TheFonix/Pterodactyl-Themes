@@ -65,7 +65,7 @@
                 </div>
                 <div class="box-footer">
                     {!! csrf_field() !!}
-                    <input value="Create User (Disabled)" class="btn btn-success btn-sm">
+                    <input type="submit" value="Create User" class="btn btn-success btn-sm">
                 </div>
             </div>
         </div>
