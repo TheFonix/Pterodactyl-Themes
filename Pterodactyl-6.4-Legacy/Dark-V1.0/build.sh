@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ ! -f artisan ]; then
+if [ ! -f "artisan" ]; then
     echo "Could not find the Artisan file, this normally means you are not in the correct directory! Please go to the root installation of your panel and re-run this script! Thanks"
 
     else
@@ -14,7 +14,7 @@ if [ ! -f artisan ]; then
     zip -r PanelBackup-$(date +"%Y-%m-%d").zip public resources
 
     echo "Downloading the Theme you picked"
-    mkdir -p tempdown && && cd tempdown && git clone https://github.com/TheFonix/Pterodactyl-Themes.git . 
+    mkdir -p tempdown && cd tempdown && git clone https://github.com/TheFonix/Pterodactyl-Themes.git . 
     cp -r Dark-V1.0/public .. 
     cp -r Dark-V1.0/resources .. 
 
@@ -25,6 +25,6 @@ if [ ! -f artisan ]; then
 
     cd .. && rm -rf tempdown
 
-    echo "Complete! Have a good day and dont forget to refresh your browser cache! "
-    echo "~Fonix"
+    echo "Complete! Have a good day and dont forget to refresh your browser cache!"
+    echo "Fonix"
 fi
