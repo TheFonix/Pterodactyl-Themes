@@ -17,5 +17,15 @@ To Install Run the following command in the Panel Directory!
 ```
 curl https://raw.githubusercontent.com/TheFonix/Pterodactyl-Themes/master/Pterodactyl-7/Graphite/build.sh | sh
 ```
+
+### Mightnight
+A Touch of Midnight
+![](https://raw.githubusercontent.com/TheFonix/Pterodactyl-Themes/master/Pterodactyl-7/Midnight/screenshots/1.png)
+![](https://raw.githubusercontent.com/TheFonix/Pterodactyl-Themes/master/Pterodactyl-7/Midnight/screenshots/2.png)
+![](https://raw.githubusercontent.com/TheFonix/Pterodactyl-Themes/master/Pterodactyl-7/Midnight/screenshots/3.png)
+To Install Run the following command in the Panel Directory! 
+```
+curl https://raw.githubusercontent.com/TheFonix/Pterodactyl-Themes/master/Pterodactyl-7/Midnight/build.sh | sh
+```
 ## More Coming Soon!
 
