@@ -11,6 +11,7 @@ if [ ! -f "artisan" ]; then
     echo "Making Sure you have GIT, installed"
     sleep 1
     apt install git zip -y
+    yum install git zip -y
 
     echo "Backing up previous panel files in the case that something goes wrong!"
     zip -r PanelBackup-$(date +"%Y-%m-%d").zip public resources
