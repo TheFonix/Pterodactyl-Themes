@@ -13,7 +13,7 @@ if [ ! -f "artisan" ]; then
     apt install git zip -y
 
     echo "Backing up previous panel files in the case that something goes wrong!"
-    zip -r PanelBackup-$(date +"%Y-%m-%d").zip public resources
+    zip -r PanelBackup-$(date +"%Y-%m-%d %H-%M-%S").zip public resources
 
     echo "Downloading the Theme you picked"
     mkdir -p tempdown && cd tempdown && git clone https://github.com/TheFonix/Pterodactyl-Themes.git . 
