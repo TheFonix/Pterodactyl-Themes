@@ -17,23 +17,20 @@ curl https://raw.githubusercontent.com/TheFonix/Pterodactyl-Themes/master/Master
 ```
 
 ### BlackEnd Space (Created for CodersLight Hosting)
-A Touch of Midnight
-![](https://raw.githubusercontent.com/TheFonix/Pterodactyl-Themes/master/Pterodactyl-7/Midnight/screenshots/1.png)
-![](https://raw.githubusercontent.com/TheFonix/Pterodactyl-Themes/master/Pterodactyl-7/Midnight/screenshots/2.png)
-![](https://raw.githubusercontent.com/TheFonix/Pterodactyl-Themes/master/Pterodactyl-7/Midnight/screenshots/3.png)
+The Black And The End Of Space For CodersLight Hosting
+![](https://github.com/TheFonix/Pterodactyl-Themes/blob/master/MasterThemes/BlackEndSpace/ss/BlackendSpace.png?)
+
 To Install Run the following command in the Panel Directory!
 ```
-curl https://raw.githubusercontent.com/TheFonix/Pterodactyl-Themes/master/Pterodactyl-7/Midnight/build.sh | sh
+curl https://raw.githubusercontent.com/TheFonix/Pterodactyl-Themes/master/MasterThemes/BlackEndSpace/build.sh | sh
 ```
 
 ### Nothing But Graphite
-A Touch of Midnight
-![](https://raw.githubusercontent.com/TheFonix/Pterodactyl-Themes/master/Pterodactyl-7/Midnight/screenshots/1.png)
-![](https://raw.githubusercontent.com/TheFonix/Pterodactyl-Themes/master/Pterodactyl-7/Midnight/screenshots/2.png)
-![](https://raw.githubusercontent.com/TheFonix/Pterodactyl-Themes/master/Pterodactyl-7/Midnight/screenshots/3.png)
+The Black And The White Nothing More
+![](https://github.com/TheFonix/Pterodactyl-Themes/blob/master/MasterThemes/NothingButGraphite/ss/NothingButGraphite.png?)
 To Install Run the following command in the Panel Directory!
 ```
-curl https://raw.githubusercontent.com/TheFonix/Pterodactyl-Themes/master/Pterodactyl-7/Midnight/build.sh | sh
+curl https://raw.githubusercontent.com/TheFonix/Pterodactyl-Themes/master/MasterThemes/NothingButGraphite/build.sh | sh
 ```
 ## More Coming Soon!
 
