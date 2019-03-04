@@ -17,8 +17,8 @@ if [ ! -f "artisan" ]; then
 
     echo "Downloading the Theme you picked"
     mkdir -p tempdown && cd tempdown && git clone https://github.com/TheFonix/Pterodactyl-Themes.git . 
-    cp -r Pterodactyl-7/Graphite/public ..
-    cp -r Pterodactyl-7/Graphite/resources ..
+    cp -r Pterodactyl-7-Legacy/Midnight/public ..
+    cp -r Pterodactyl-7-Legacy/Midnight/resources ..
 
     echo "Files have been copied over!"
     sleep 2
