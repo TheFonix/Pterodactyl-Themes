@@ -18,7 +18,7 @@ curl https://raw.githubusercontent.com/TheFonix/Pterodactyl-Themes/master/Master
 
 ### BlackEnd Space (Created for CodersLight Hosting)
 The Black And The End Of Space For CodersLight Hosting
-![](https://github.com/TheFonix/Pterodactyl-Themes/blob/master/MasterThemes/BlackEndSpace/ss/BlackendSpace.png?)
+![](https://github.com/TheFonix/Pterodactyl-Themes/blob/master/MasterThemes/BlackEndSpace/SS/BlackendSpace.png?)
 
 To Install Run the following command in the Panel Directory!
 ```
@@ -27,7 +27,7 @@ curl https://raw.githubusercontent.com/TheFonix/Pterodactyl-Themes/master/Master
 
 ### Nothing But Graphite
 The Black And The White Nothing More
-![](https://github.com/TheFonix/Pterodactyl-Themes/blob/master/MasterThemes/NothingButGraphite/ss/NothingButGraphite.png?)
+![](https://github.com/TheFonix/Pterodactyl-Themes/blob/master/MasterThemes/NothingButGraphite/SS/NothingButGraphite.png?)
 To Install Run the following command in the Panel Directory!
 ```
 curl https://raw.githubusercontent.com/TheFonix/Pterodactyl-Themes/master/MasterThemes/NothingButGraphite/build.sh | sh
