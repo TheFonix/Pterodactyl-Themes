@@ -1,5 +1,4 @@
 #!/bin/sh
-
 if [ ! -f "artisan" ]; then
-    echo "File not found"
+echo "File not found"
 fi
