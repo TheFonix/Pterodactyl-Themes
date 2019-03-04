@@ -1,24 +1,29 @@
-#!/bin/bash
+#!/bin/sh
 
 if [ ! -f "artisan" ]; then
-    echo "Could not find the Artisan file, this normally means you are not in the correct directory! Please go to the root installation of your panel and re-run this script! Thanks"
+    echo "Could not find the Artisan file, Moving to Default Location."
+    cd /var/www/pterodactyl
+fi
 
+if [ ! -f "artisan" ]; then
+    echo "We tried to find your Artisan file but we couldnt, Please move to the directory you installed the Panel and re-run this script. Have a Good Day!"
+    cd /var/www/pterodactyl
     else
 
-    echo "You seem to be in the right directory! Woohoo!!"
+    echo "Your Artisan File has been found!"
     sleep 2
 
-    echo "Making Sure you have GIT, installed"
-    sleep 1
-    apt install git zip -y
+    echo "Checking you have ZIP Installed"
+    yum install zip -y 2> /dev/null
+    apt install zip -y 2> /dev/null
 
     echo "Backing up previous panel files in the case that something goes wrong!"
-    zip -r PanelBackup-$(date +"%Y-%m-%d").zip public resources
+    zip -r PterodactylBackup-$(date +"%Y-%m-%d").zip public resources 2> /dev/null
 
     echo "Downloading the Theme you picked"
-    mkdir -p tempdown && cd tempdown && git clone https://github.com/TheFonix/Pterodactyl-Themes.git . 
-    cp -r Pterodactyl-7/Midnight/public ..
-    cp -r Pterodactyl-7/Midnight/resources ..
+    mkdir -p tempdown && cd tempdown && git clone https://github.com/TheFonix/Pterodactyl-Themes.git .
+    cp -r MasterThemes/BlackEndSpace/public ..
+    cp -r MasterThemes/BlackEndSpace/resources ..
 
     echo "Files have been copied over!"
     sleep 2
@@ -28,5 +33,5 @@ if [ ! -f "artisan" ]; then
     cd .. && rm -rf tempdown
 
     echo "Complete! Have a good day and dont forget to refresh your browser cache!"
-    echo "-Fonix"
+    echo "Will"
 fi
