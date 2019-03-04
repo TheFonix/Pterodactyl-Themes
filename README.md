@@ -5,27 +5,38 @@ Here is a selection of themes for Pterodactyl!
 Sure! All of the themes you see below are made for you to take and change for your own personal projects! Or if you like them already you can keep them as they are!
 
 ## How do i use them?
-Each Theme has a small code snippet that you must run inside the Pterodactyl panel directory, this is normally located at `/var/www/html/pterodactyl/` The implementation command will take a backup of your current panel incase anything goes wrong during the theme change! So you dont need to worry about losing anything you already made!
+Each Theme has a small code snippet that you must run inside the Pterodactyl panel directory, this is normally located at `/var/www/html/pterodactyl/` The implementation command will take a backup of your current panel incase anything goes wrong during the theme change! So you don't need to worry about losing anything you've already made!
 
 ## Themes Ready for you to use:
-### Graphite
+### Red Ape
 A Simple Change from Blue to Black!
 ![](https://raw.githubusercontent.com/TheFonix/Pterodactyl-Themes/master/Pterodactyl-7/Graphite/screenshots/1.png)
 ![](https://raw.githubusercontent.com/TheFonix/Pterodactyl-Themes/master/Pterodactyl-7/Graphite/screenshots/2.png)
 ![](https://raw.githubusercontent.com/TheFonix/Pterodactyl-Themes/master/Pterodactyl-7/Graphite/screenshots/3.png)
-To Install Run the following command in the Panel Directory! 
+To Install Run the following command in the Panel Directory!
 ```
 curl https://raw.githubusercontent.com/TheFonix/Pterodactyl-Themes/master/Pterodactyl-7/Graphite/build.sh | sh
 ```
 
-### Mightnight
+### BlackEnd Space (Created for CodersLight Hosting)
 A Touch of Midnight
 ![](https://raw.githubusercontent.com/TheFonix/Pterodactyl-Themes/master/Pterodactyl-7/Midnight/screenshots/1.png)
 ![](https://raw.githubusercontent.com/TheFonix/Pterodactyl-Themes/master/Pterodactyl-7/Midnight/screenshots/2.png)
 ![](https://raw.githubusercontent.com/TheFonix/Pterodactyl-Themes/master/Pterodactyl-7/Midnight/screenshots/3.png)
-To Install Run the following command in the Panel Directory! 
+To Install Run the following command in the Panel Directory!
+```
+curl https://raw.githubusercontent.com/TheFonix/Pterodactyl-Themes/master/Pterodactyl-7/Midnight/build.sh | sh
+```
+
+### Nothing But Graphite
+A Touch of Midnight
+![](https://raw.githubusercontent.com/TheFonix/Pterodactyl-Themes/master/Pterodactyl-7/Midnight/screenshots/1.png)
+![](https://raw.githubusercontent.com/TheFonix/Pterodactyl-Themes/master/Pterodactyl-7/Midnight/screenshots/2.png)
+![](https://raw.githubusercontent.com/TheFonix/Pterodactyl-Themes/master/Pterodactyl-7/Midnight/screenshots/3.png)
+To Install Run the following command in the Panel Directory!
 ```
 curl https://raw.githubusercontent.com/TheFonix/Pterodactyl-Themes/master/Pterodactyl-7/Midnight/build.sh | sh
 ```
 ## More Coming Soon!
 
+# Please note Legacy Themes are no longer supported by the newest versions of Pterodactyl, please only use supported themes!
