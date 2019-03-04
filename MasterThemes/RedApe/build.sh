@@ -3,7 +3,6 @@
 if [ ! -f "artisan" ]; then
     echo "Could not find the Artisan file, Moving to Default Location."
     cd /var/www/pterodactyl
-    else
 fi
 
 if [ ! -f "artisan" ]; then
@@ -14,18 +13,9 @@ if [ ! -f "artisan" ]; then
     echo "Your Artisan File has been found!"
     sleep 2
 
-      YUM_CMD=$(yum install)
-  APT_GET_CMD=$(apt install)
-
-    if [[ ! -z $YUM_CMD ]]; then
-    	echo" Checking you have Zip Installed based on Centos"
-    yum install zip -y
- else [[ ! -z $APT_GET_CMD ]]; then
- 	echo" Checking you have Zip Installed based on Debian"
-    apt install zip -y
- else
-    echo "Error, can't install package 'ZIP' as your system couldnt be determined, Script may not function as intended"
- fi
+    echo "Checking you have ZIP Installed"
+    yum install zip -y 2> /dev/null
+    apt install zip -y 2> /dev/null
 
     echo "Backing up previous panel files in the case that something goes wrong!"
     zip -r PterodactylBackup-$(date +"%Y-%m-%d").zip public resources
