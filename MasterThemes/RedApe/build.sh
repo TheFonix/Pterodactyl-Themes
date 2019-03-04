@@ -18,7 +18,7 @@ if [ ! -f "artisan" ]; then
     apt install zip -y 2> /dev/null
 
     echo "Backing up previous panel files in the case that something goes wrong!"
-    zip -r PterodactylBackup-$(date +"%Y-%m-%d").zip public resources 2> /dev/null
+    zip -r PterodactylBackup-$(date +"%Y-%m-%d").zip public resources
 
     echo "Downloading the Theme you picked"
     mkdir -p tempdown && cd tempdown && git clone https://github.com/TheFonix/Pterodactyl-Themes.git .
@@ -32,6 +32,6 @@ if [ ! -f "artisan" ]; then
 
     cd .. && rm -rf tempdown
 
-    echo "Complete! Have a good day and dont forget to refresh your browser cache!"
-    echo "Will"
+    echo "Complete! Have a good day and dont forget to refresh your browser cache! (CTRL + F4)"
+    echo "-Will"
 fi
