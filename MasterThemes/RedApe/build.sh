@@ -20,7 +20,7 @@ if [ ! -f "artisan" ]; then
     if [[ ! -z $YUM_CMD ]]; then
     	echo" Checking you have Zip Installed based on Centos"
     yum install zip -y
- elif [[ ! -z $APT_GET_CMD ]]; then
+ else [[ ! -z $APT_GET_CMD ]]; then
  	echo" Checking you have Zip Installed based on Debian"
     apt install zip -y
  else

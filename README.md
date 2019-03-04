@@ -9,13 +9,11 @@ Each Theme has a small code snippet that you must run inside the Pterodactyl pan
 
 ## Themes Ready for you to use:
 ### Red Ape
-A Simple Change from Blue to Black!
-![](https://raw.githubusercontent.com/TheFonix/Pterodactyl-Themes/master/Pterodactyl-7/Graphite/screenshots/1.png)
-![](https://raw.githubusercontent.com/TheFonix/Pterodactyl-Themes/master/Pterodactyl-7/Graphite/screenshots/2.png)
-![](https://raw.githubusercontent.com/TheFonix/Pterodactyl-Themes/master/Pterodactyl-7/Graphite/screenshots/3.png)
+A Red'er Way Of Life
+![](https://github.com/TheFonix/Pterodactyl-Themes/blob/master/MasterThemes/RedApe/ss/Red_Ape.png?)
 To Install Run the following command in the Panel Directory!
 ```
-curl https://raw.githubusercontent.com/TheFonix/Pterodactyl-Themes/master/Pterodactyl-7/Graphite/build.sh | sh
+curl https://raw.githubusercontent.com/TheFonix/Pterodactyl-Themes/master/MasterThemes/RedApe/build.sh | sh
 ```
 
 ### BlackEnd Space (Created for CodersLight Hosting)
