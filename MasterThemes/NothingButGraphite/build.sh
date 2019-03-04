@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 if [ ! -f "artisan" ]; then
     echo "Could not find the Artisan file, Moving to Default Location."
@@ -21,9 +21,9 @@ if [ ! -f "artisan" ]; then
     zip -r PterodactylBackup-$(date +"%Y-%m-%d").zip public resources
 
     echo "Downloading the Theme you picked"
-    mkdir -p tempdown && cd tempdown && git clone https://github.com/TheFonix/Pterodactyl-Themes.git . 
-    cp -r MasterThemes/NothingButGraphite/public .. 
-    cp -r MasterThemes/NothingButGraphite/resources .. 
+    mkdir -p tempdown && cd tempdown && git clone https://github.com/TheFonix/Pterodactyl-Themes.git .
+    cp -r MasterThemes/NothingButGraphite/public ..
+    cp -r MasterThemes/NothingButGraphite/resources ..
 
     echo "Files have been copied over!"
     sleep 2
