@@ -804,7 +804,8 @@ a:hover, a:active, a:focus {
 }
 .dropdown-menu {
 	box-shadow: none;
-	border-color: #eee
+	border-color: #eee;
+	background-color: rgba(0, 0, 0, 0.82);
 }
 .dropdown-menu>li>a {
 	color: #cecece
@@ -813,7 +814,7 @@ a:hover, a:active, a:focus {
 	margin-right: 10px
 }
 .dropdown-menu>li>a:hover {
-	background-color: #e1e3e9;
+	background-color: rgba(255, 255, 255, 0.32);
 	color: #ccc
 }
 .dropdown-menu>.divider {
@@ -835,7 +836,7 @@ a:hover, a:active, a:focus {
 	border-bottom-left-radius: 0;
 	background-color: rgba(0, 0, 0, 0.23);
 	padding: 7px 10px;
-	border-bottom: 1px solid #666;
+	border-bottom: 1px solid #1d1d1d;
 	color: #cecece444;
 	font-size: 14px
 }
@@ -871,7 +872,7 @@ a:hover, a:active, a:focus {
 .navbar-nav>.notifications-menu>.dropdown-menu>li .menu>li>a, .navbar-nav>.messages-menu>.dropdown-menu>li .menu>li>a, .navbar-nav>.tasks-menu>.dropdown-menu>li .menu>li>a {
 	display: block;
 	white-space: nowrap;
-	border-bottom: 1px solid #666
+	border-bottom: 1px solid #1d1d1d
 }
 .navbar-nav>.notifications-menu>.dropdown-menu>li .menu>li>a:hover, .navbar-nav>.messages-menu>.dropdown-menu>li .menu>li>a:hover, .navbar-nav>.tasks-menu>.dropdown-menu>li .menu>li>a:hover {
 	background: #cecece;
@@ -978,7 +979,7 @@ a:hover, a:active, a:focus {
 }
 .navbar-nav>.user-menu>.dropdown-menu>.user-body {
 	padding: 15px;
-	border-bottom: 1px solid #666;
+	border-bottom: 1px solid #1d1d1d;
 	border-top: 1px solid #292929ddd
 }
 .navbar-nav>.user-menu>.dropdown-menu>.user-body:before, .navbar-nav>.user-menu>.dropdown-menu>.user-body:after {
@@ -1409,7 +1410,7 @@ a:hover, a:active, a:focus {
 	display: none
 }
 .box .nav-stacked>li {
-	border-bottom: 1px solid #666;
+	border-bottom: 1px solid #1d1d1d;
 	margin: 0
 }
 .box .nav-stacked>li:last-of-type {
@@ -1420,10 +1421,10 @@ a:hover, a:active, a:focus {
 	overflow: auto
 }
 .box .border-right {
-	border-right: 1px solid #666
+	border-right: 1px solid #1d1d1d
 }
 .box .border-left {
-	border-left: 1px solid #666
+	border-left: 1px solid #1d1d1d
 }
 .box.box-solid {
 	border-top: 0
@@ -1562,7 +1563,7 @@ a:hover, a:active, a:focus {
 	position: relative
 }
 .box-header.with-border {
-	border-bottom: 1px solid #666
+	border-bottom: 1px solid #1d1d1d
 }
 .collapsed-box .box-header.with-border {
 	border-bottom: none
@@ -1643,7 +1644,7 @@ a:hover, a:active, a:focus {
 	border-top-right-radius: 0;
 	border-bottom-right-radius: 3px;
 	border-bottom-left-radius: 3px;
-	border-top: 1px solid #666;
+	border-top: 1px solid #1d1d1d;
 	padding: 10px;
 	background-color: rgba(0, 0, 0, 0.23)
 }
@@ -1970,7 +1971,7 @@ a:hover, a:active, a:focus {
 .timeline>li>.timeline-item>.timeline-header {
 	margin: 0;
 	color: #ccc;
-	border-bottom: 1px solid #666;
+	border-bottom: 1px solid #1d1d1d;
 	padding: 10px;
 	font-size: 16px;
 	line-height: 1.1
@@ -2418,13 +2419,13 @@ a:hover, a:active, a:focus {
 	-webkit-box-shadow: none;
 	box-shadow: none;
 	border-radius: 0;
-	border-bottom: 1px solid #666
+	border-bottom: 1px solid #1d1d1d
 }
 .product-list-in-box>.item:last-of-type {
 	border-bottom-width: 0
 }
 .table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td {
-	border-top: 1px solid #666
+	border-top: 1px solid #1d1d1d
 }
 .table>thead>tr>th {
 	border-bottom: 2px solid #cecece
@@ -2433,10 +2434,10 @@ a:hover, a:active, a:focus {
 	margin-top: 5px
 }
 .table-bordered {
-	border: 1px solid #666
+	border: 1px solid #1d1d1d
 }
 .table-bordered>thead>tr>th, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td, .table-bordered>tbody>tr>td, .table-bordered>tfoot>tr>td {
-	border: 1px solid #666
+	border: 1px solid #1d1d1d
 }
 .table-bordered>thead>tr>th, .table-bordered>thead>tr>td {
 	border-bottom-width: 2px
@@ -2832,10 +2833,10 @@ table.text-center, table.text-center td, table.text-center th {
 	padding: 5px
 }
 .mailbox-controls.with-border {
-	border-bottom: 1px solid #666
+	border-bottom: 1px solid #1d1d1d
 }
 .mailbox-read-info {
-	border-bottom: 1px solid #666;
+	border-bottom: 1px solid #1d1d1d;
 	padding: 10px
 }
 .mailbox-read-info h3 {
@@ -3025,7 +3026,7 @@ table.text-center, table.text-center td, table.text-center th {
 .invoice {
 	position: relative;
 	rgba(0, 0, 0, 0.23);
-	border: 1px solid #666;
+	border: 1px solid #1d1d1d;
 	padding: 20px;
 	margin: 10px 25px
 }
@@ -4762,7 +4763,7 @@ table.text-center, table.text-center td, table.text-center th {
 	padding: 2px
 }
 .attachment-block {
-	border: 1px solid #666;
+	border: 1px solid #1d1d1d;
 	padding: 5px;
 	margin-bottom: 10px;
 	background: #f7f7f7
