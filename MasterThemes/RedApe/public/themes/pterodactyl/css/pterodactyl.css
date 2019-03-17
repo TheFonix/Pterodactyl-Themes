@@ -23,7 +23,7 @@
  @import 'checkbox.css';
 
 .login-page {
-    background: #a52828;
+    background: #9c1f1f;
 }
 
 #login-position-elements {
@@ -114,8 +114,8 @@
 }
 
 code {
-    background-color: #eef1f6;
-    color: #596981;
+    background-color: #393d40;
+    color: #eaeaea;
     border-radius: 2px;
     padding-left: 4px;
     padding-right: 4px;
@@ -288,7 +288,7 @@ span[aria-labelledby="select2-pUserId-container"] {
 }
 
 .label-default {
-    background-color: #eef1f6 !important;
+    background-color: #393d40 !important;
 }
 
 .callout.callout-info.callout-slim {
