@@ -22,8 +22,8 @@ if [ ! -f "artisan" ]; then
 
     echo "Downloading the Theme you picked"
     mkdir -p tempdown && cd tempdown && git clone https://github.com/TheFonix/Pterodactyl-Themes.git .
-    cp -r MasterThemes/BlueBrick/public ..
-    cp -r MasterThemes/BlueBrick/resources ..
+    cp -r MasterThemes/MinecraftMadness/public ..
+    cp -r MasterThemes/MinecraftMadness/resources ..
 
     echo "Files have been copied over!"
     sleep 2
