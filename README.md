@@ -9,6 +9,13 @@ Each Theme has a small code snippet that you must run inside the Pterodactyl pan
 
 ## Themes Ready for you to use:
 
+### Tango Twist
+A Touch Of Orange
+![](https://github.com/TheFonix/Pterodactyl-Themes/blob/master/MasterThemes/TangoTwist/ss/TangoTwist.png?)
+To Install Run the following command in the Panel Directory!
+```
+curl https://raw.githubusercontent.com/TheFonix/Pterodactyl-Themes/master/MasterThemes/TangoTwist/build.sh | sh
+```
 
 ### Blue Brick
 A Sort Of Blue
@@ -16,6 +23,14 @@ A Sort Of Blue
 To Install Run the following command in the Panel Directory!
 ```
 curl https://raw.githubusercontent.com/TheFonix/Pterodactyl-Themes/master/MasterThemes/BlueBrick/build.sh | sh
+```
+
+### Minecraft Madness
+Everybody Loves A Little Minecraft
+![](https://github.com/TheFonix/Pterodactyl-Themes/blob/master/MasterThemes/MinecraftMadness/ss/MinecraftMadness.png?)
+To Install Run the following command in the Panel Directory!
+```
+curl https://raw.githubusercontent.com/TheFonix/Pterodactyl-Themes/master/MasterThemes/MinecraftMadness/build.sh | sh
 ```
 
 
