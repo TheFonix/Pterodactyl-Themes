@@ -1,15 +1,17 @@
 # Pterodactyl-Themes
 Here is a selection of themes for Pterodactyl!
 
-## Can i use them?
+## Can I use them?
 Sure! All of the themes you see below are made for you to take and change for your own personal projects! Or if you like them already you can keep them as they are!
 
+## Panel Versioning
+Make sure that the theme you are installing corresponds with the version of the panel you are running; no help will be given if you have mismatched versions!
 ## How do i use them?
-Each Theme has a small code snippet that you must run inside the Pterodactyl panel directory, this is normally located at `/var/www/html/pterodactyl/` The implementation command will take a backup of your current panel incase anything goes wrong during the theme change! So you don't need to worry about losing anything you've already made!
+Each Theme has a small code snippet that you must run inside the Pterodactyl panel directory, this is normally located at `/var/www/html/pterodactyl/` The implementation command will take a backup of your current panel in case anything goes wrong during the theme change! So you don't need to worry about losing anything you've already made!
 
 ## Themes Ready for you to use:
 
-### Tango Twist
+### Tango Twist (Panel 0.7.13)
 A Touch Of Orange
 ![](https://github.com/TheFonix/Pterodactyl-Themes/blob/master/MasterThemes/TangoTwist/ss/TangoTwist.png?)
 To Install Run the following command in the Panel Directory!
@@ -17,7 +19,7 @@ To Install Run the following command in the Panel Directory!
 curl https://raw.githubusercontent.com/TheFonix/Pterodactyl-Themes/master/MasterThemes/TangoTwist/build.sh | sh
 ```
 
-### Blue Brick
+### Blue Brick (Panel 0.7.13)
 A Sort Of Blue
 ![](https://github.com/TheFonix/Pterodactyl-Themes/blob/master/MasterThemes/BlueBrick/ss/BlueBrick.png?)
 To Install Run the following command in the Panel Directory!
@@ -25,7 +27,7 @@ To Install Run the following command in the Panel Directory!
 curl https://raw.githubusercontent.com/TheFonix/Pterodactyl-Themes/master/MasterThemes/BlueBrick/build.sh | sh
 ```
 
-### Minecraft Madness
+### Minecraft Madness (Panel 0.7.13)
 Everybody Loves A Little Minecraft
 ![](https://github.com/TheFonix/Pterodactyl-Themes/blob/master/MasterThemes/MinecraftMadness/ss/MinecraftMadness.png?)
 To Install Run the following command in the Panel Directory!
@@ -34,7 +36,7 @@ curl https://raw.githubusercontent.com/TheFonix/Pterodactyl-Themes/master/Master
 ```
 
 
-### Lime Stitch
+### Lime Stitch (Panel 0.7.13)
 Lime, Hold the Lemon
 ![](https://github.com/TheFonix/Pterodactyl-Themes/blob/master/MasterThemes/LimeStitch/ss/LimeStitch.png?)
 To Install Run the following command in the Panel Directory!
@@ -43,7 +45,7 @@ curl https://raw.githubusercontent.com/TheFonix/Pterodactyl-Themes/master/Master
 ```
 
 
-### Red Ape
+### Red Ape (Panel 0.7.13)
 A Red'er Way Of Life
 ![](https://github.com/TheFonix/Pterodactyl-Themes/blob/master/MasterThemes/RedApe/ss/Red_Ape.png?)
 To Install Run the following command in the Panel Directory!
@@ -62,7 +64,7 @@ curl https://raw.githubusercontent.com/TheFonix/Pterodactyl-Themes/master/Master
 ```
 
 
-### Nothing But Graphite
+### Nothing But Graphite (Panel 0.7.13)
 The Black And The White Nothing More
 ![](https://github.com/TheFonix/Pterodactyl-Themes/blob/master/MasterThemes/NothingButGraphite/SS/NothingButGraphite.png?)
 To Install Run the following command in the Panel Directory!
@@ -71,4 +73,5 @@ curl https://raw.githubusercontent.com/TheFonix/Pterodactyl-Themes/master/Master
 ```
 ## More Coming Soon!
 
-### Please note Legacy Themes are no longer supported by the newest versions of Pterodactyl, please only use supported themes!
+### Please note Legacy Themes are no longer supported by the newest versions of Pterodactyl, please only use supported themes! Uses Older Themes on newer panels will result in lots of issues.
+
