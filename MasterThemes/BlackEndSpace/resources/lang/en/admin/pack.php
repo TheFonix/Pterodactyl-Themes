@@ -1,6 +1,8 @@
 <?php
 /**
  * Pterodactyl - Panel
+THEME EDITED BY FONIX/WILL
+- https://hardcastle.xyz -
  * Copyright (c) 2015 - 2017 Dane Everitt <dane@daneeveritt.com>.
  *
  * This software is licensed under the terms of the MIT license.
