@@ -73,5 +73,5 @@ curl https://raw.githubusercontent.com/TheFonix/Pterodactyl-Themes/master/Master
 ```
 ## More Coming Soon!
 
-### Please note Legacy Themes are no longer supported by the newest versions of Pterodactyl, please only use supported themes! Uses Older Themes on newer panels will result in lots of issues.
+### Please note Legacy Themes are no longer supported by the newest versions of Pterodactyl, please only use supported themes! Using Older Themes on newer panels will result in lots of issues.
 
