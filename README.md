@@ -1,4 +1,5 @@
-# Pterodactyl-Themes
+![](https://github.com/TheFonix/Pterodactyl-Themes/blob/master/banner.png?)
+
 Here is a selection of themes for Pterodactyl!
 
 ## Can I use them?
