@@ -1,6 +1,4 @@
-![](https://github.com/TheFonix/Pterodactyl-Themes/blob/master/banner.png?)
-
-Here is a selection of themes for Pterodactyl!
+![](https://github.com/TheFonix/Pterodactyl-Themes/blob/master/pteroBanner.png?)
 
 ## Can I use them?
 Sure! All of the themes you see below are made for you to take and change for your own personal projects! Or if you like them already you can keep them as they are!
