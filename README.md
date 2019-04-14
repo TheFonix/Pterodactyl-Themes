@@ -9,7 +9,7 @@ Make sure that the theme you are installing corresponds with the version of the 
 Each Theme has a small code snippet that you must run inside the Pterodactyl panel directory, this is normally located at `/var/www/html/pterodactyl/` The implementation command will take a backup of your current panel in case anything goes wrong during the theme change! So you don't need to worry about losing anything you've already made!
 
 ## Suggestions
-I'm sure there is something you would love to see changed, head over to the issues tab and i'll attempt on making it happen!
+I'm sure there is something you would love to see changed, head over to the issues tab and i'll attempt on make it happen!
 
 ## Any Structure Changes?
 Yes! You will notice that you no longer have the Graphs that come with the panel by stock, they have instead been replaced with Ram, CPU and Node information as well as Connection information, this saves you from having to pop back and forth so much! You can see the changes below: (This image is based off the white theme, each theme will change how the panel is viewed)
