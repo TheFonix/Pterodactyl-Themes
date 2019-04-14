@@ -172,7 +172,7 @@
                     text: 'Are you sure that you want to delete this database? There is no going back, all data will immediately be removed.',
                     showCancelButton: true,
                     confirmButtonText: 'Delete',
-                    confirmButtonColor: '#1d1d1d',
+                    confirmButtonColor: '#d9534f',
                     closeOnConfirm: false,
                     showLoaderOnConfirm: true,
                 }, function () {

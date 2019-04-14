@@ -61,7 +61,7 @@
                                 <td>{{ $node->memory }} MB</td>
                                 <td>{{ $node->disk }} MB</td>
                                 <td class="text-center">{{ $node->servers_count }}</td>
-                                <td class="text-center" style="color:{{ ($node->scheme === 'https') ? '#1d1d1d' : '#1d1d1d' }}"><i class="fa fa-{{ ($node->scheme === 'https') ? 'lock' : 'unlock' }}"></i></td>
+                                <td class="text-center" style="color:{{ ($node->scheme === 'https') ? '#50af51' : '#d9534f' }}"><i class="fa fa-{{ ($node->scheme === 'https') ? 'lock' : 'unlock' }}"></i></td>
                                 <td class="text-center"><i class="fa fa-{{ ($node->public) ? 'eye' : 'eye-slash' }}"></i></td>
                             </tr>
                         @endforeach
@@ -94,14 +94,14 @@
                 $(element).find('i').tooltip({
                     title: 'v' + data.version,
                 });
-                $(element).removeClass('text-muted').find('i').removeClass().addClass('fa fa-fw fa-heartbeat faa-pulse animated').css('color', '#1d1d1d');
+                $(element).removeClass('text-muted').find('i').removeClass().addClass('fa fa-fw fa-heartbeat faa-pulse animated').css('color', '#50af51');
             }).fail(function (error) {
                 var errorText = 'Error connecting to node! Check browser console for details.';
                 try {
                     errorText = error.responseJSON.errors[0].detail || errorText;
                 } catch (ex) {}
 
-                $(element).removeClass('text-muted').find('i').removeClass().addClass('fa fa-fw fa-heart-o').css('color', '#1d1d1d');
+                $(element).removeClass('text-muted').find('i').removeClass().addClass('fa fa-fw fa-heart-o').css('color', '#d9534f');
                 $(element).find('i').tooltip({ title: errorText });
             });
         }).promise().done(function () {
