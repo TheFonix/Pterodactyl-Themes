@@ -8,6 +8,10 @@ Make sure that the theme you are installing corresponds with the version of the 
 ## How do i use them?
 Each Theme has a small code snippet that you must run inside the Pterodactyl panel directory, this is normally located at `/var/www/html/pterodactyl/` The implementation command will take a backup of your current panel in case anything goes wrong during the theme change! So you don't need to worry about losing anything you've already made!
 
+## Any Structure Changes?
+Yes! You will notice that you no longer have the Graphs that come with the panel by stock, they have instead been replaced with Ram, CPU and Node information as well as Connection information, this saves you from having to pop back and forth so much! You can see the changes below: (This image is based off the white theme, each theme will change how the panel is viewed)
+![](https://i.fonix.online/Alarmed_Sablefish.png)
+
 ## Themes Ready for you to use:
 
 ### Tango Twist (Panel 0.7.13)
