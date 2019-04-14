@@ -1,5 +1,4 @@
-# Pterodactyl-Themes
-Here is a selection of themes for Pterodactyl!
+![](https://github.com/TheFonix/Pterodactyl-Themes/blob/master/pteroBanner.png?)
 
 ## Can I use them?
 Sure! All of the themes you see below are made for you to take and change for your own personal projects! Or if you like them already you can keep them as they are!
@@ -73,5 +72,5 @@ curl https://raw.githubusercontent.com/TheFonix/Pterodactyl-Themes/master/Master
 ```
 ## More Coming Soon!
 
-### Please note Legacy Themes are no longer supported by the newest versions of Pterodactyl, please only use supported themes! Uses Older Themes on newer panels will result in lots of issues.
+### Please note Legacy Themes are no longer supported by the newest versions of Pterodactyl, please only use supported themes! Using Older Themes on newer panels will result in lots of issues.
 
