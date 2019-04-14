@@ -15,7 +15,7 @@ I'm sure there is something you would love to see changed, head over to the issu
 Yes! You will notice that you no longer have the Graphs that come with the panel by stock, they have instead been replaced with Ram, CPU and Node information as well as Connection information, this saves you from having to pop back and forth so much! You can see the changes below: (This image is based off the white theme, each theme will change how the panel is viewed)
 ![](https://i.fonix.online/Alarmed_Sablefish.png)
 
-With a Theme applied you will automatically gain the Version checker, you can locate this in the bottom right corner, this ensures your running the correct theme for the panel version that's present, you can see both the outdated and updated messages below, if you have an outdated message you should update your theme ASAP.
+With a Theme applied you will automatically gain the Version checker, you can locate this in the bottom right corner, this ensures your running the correct theme for the panel version that's present, you can see both the outdated and updated messages below, if you have an outdated message you should update your theme ASAP. (Only Panel Administrators can see this version checker, normal users can NOT)
 ![OutDated](https://i.fonix.online/Exemplary_Africanaugurbuzzard.png)
 ![In-Date](https://i.fonix.online/Highlevel_Lynx.png)
 
