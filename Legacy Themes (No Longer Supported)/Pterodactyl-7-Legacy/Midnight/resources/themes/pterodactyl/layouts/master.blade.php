@@ -239,7 +239,7 @@
             </div>
             <footer class="main-footer">
                 <div class="pull-right small text-gray" style="margin-right:10px;margin-top:-7px;">
-                    <strong><i class="fa fa-fw {{ $appIsGit ? 'fa-git-square' : 'fa-code-fork' }}"></i></strong> {{ $appVersion }} / T-1.1<br />
+                    <strong><i class="fa fa-fw {{ $appIsGit ? 'fa-git-square' : 'fa-code-fork' }}"></i></strong> {{ $appVersion }} / T-1.2<br />
                     <strong><i class="fa fa-fw fa-clock-o"></i></strong> {{ round(microtime(true) - LARAVEL_START, 3) }}s
                 </div>
                 Copyright &copy; 2015 - {{ date('Y') }} <a href="https://pterodactyl.io/">Pterodactyl Software</a>. | Theme: <a href="https://fonix.online/">Fonix</a>

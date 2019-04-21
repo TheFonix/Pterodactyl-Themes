@@ -18,7 +18,7 @@
         <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#bc6e3c">
         <link rel="shortcut icon" href="/favicons/favicon.ico">
         <meta name="msapplication-config" content="/favicons/browserconfig.xml">
-        <meta name="theme-color" content="#a52828">
+        <meta name="theme-color" content="#232323">
 
         @section('scripts')
             {!! Theme::css('vendor/bootstrap/bootstrap.min.css?t={cache-version}') !!}
@@ -46,7 +46,7 @@
             </div>
         </div>
         <div class="login-corner-info small">
-            <strong><i class="fa fa-fw {{ $appIsGit ? 'fa-git-square' : 'fa-code-fork' }}"></i></strong> {{ $appVersion }} / T-1.1<br />
+            <strong><i class="fa fa-fw {{ $appIsGit ? 'fa-git-square' : 'fa-code-fork' }}"></i></strong> {{ $appVersion }} / T-1.2<br />
             <strong><i class="fa fa-fw fa-clock-o"></i></strong> {{ round(microtime(true) - LARAVEL_START, 3) }}s
         </div>
 

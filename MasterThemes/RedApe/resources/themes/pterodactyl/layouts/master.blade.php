@@ -243,7 +243,7 @@
             </div>
             <footer class="main-footer">
                 <div class="pull-right small text-gray" style="margin-right:10px;margin-top:-7px;">
-                    <strong><i class="fa fa-fw {{ $appIsGit ? 'fa-git-square' : 'fa-code-fork' }}"></i></strong> {{ $appVersion }} / T-1.1                     @if(Auth::user()->root_admin)
+                    <strong><i class="fa fa-fw {{ $appIsGit ? 'fa-git-square' : 'fa-code-fork' }}"></i></strong> {{ $appVersion }} / T-1.2                     @if(Auth::user()->root_admin)
                      <?php if ($appVersion = "0.7.13") {echo '<i class="fa fa-check"></i>';} else {echo '<i class="fa fa-times"></i> <div class="label label-danger">THEME / PANEL VERSION MISMATCH</div>';}?>
                     @endif<br/>
                     <strong><i class="fa fa-fw fa-clock-o"></i></strong> {{ round(microtime(true) - LARAVEL_START, 3) }}s
