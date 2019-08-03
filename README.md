@@ -1,3 +1,4 @@
+##Please Note: Panel Breaking Code has been removed as of 02/07/2019
 ![](https://github.com/TheFonix/Pterodactyl-Themes/blob/master/pteroBanner.png?)
 
 ## Can I use them?
