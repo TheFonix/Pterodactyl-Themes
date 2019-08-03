@@ -21,7 +21,7 @@ With a Theme applied you will automatically gain the Version checker, you can lo
 
 ## Themes Ready for you to use:
 
-### Tango Twist (Panel 0.7.13)
+### Tango Twist (Panel 0.7.14)
 A Touch Of Orange
 ![](https://github.com/TheFonix/Pterodactyl-Themes/blob/master/MasterThemes/TangoTwist/ss/TangoTwist.png?)
 To Install Run the following command in the Panel Directory!
@@ -29,7 +29,7 @@ To Install Run the following command in the Panel Directory!
 curl https://raw.githubusercontent.com/TheFonix/Pterodactyl-Themes/master/MasterThemes/TangoTwist/build.sh | sh
 ```
 
-### Blue Brick (Panel 0.7.13)
+### Blue Brick (Panel 0.7.14)
 A Sort Of Blue
 ![](https://github.com/TheFonix/Pterodactyl-Themes/blob/master/MasterThemes/BlueBrick/ss/BlueBrick.png?)
 To Install Run the following command in the Panel Directory!
@@ -37,7 +37,7 @@ To Install Run the following command in the Panel Directory!
 curl https://raw.githubusercontent.com/TheFonix/Pterodactyl-Themes/master/MasterThemes/BlueBrick/build.sh | sh
 ```
 
-### Minecraft Madness (Panel 0.7.13)
+### Minecraft Madness (Panel 0.7.14)
 Everybody Loves A Little Minecraft
 ![](https://github.com/TheFonix/Pterodactyl-Themes/blob/master/MasterThemes/MinecraftMadness/ss/MinecraftMadness.png?)
 To Install Run the following command in the Panel Directory!
@@ -46,7 +46,7 @@ curl https://raw.githubusercontent.com/TheFonix/Pterodactyl-Themes/master/Master
 ```
 
 
-### Lime Stitch (Panel 0.7.13)
+### Lime Stitch (Panel 0.7.14)
 Lime, Hold the Lemon
 ![](https://github.com/TheFonix/Pterodactyl-Themes/blob/master/MasterThemes/LimeStitch/ss/LimeStitch.png?)
 To Install Run the following command in the Panel Directory!
@@ -55,7 +55,7 @@ curl https://raw.githubusercontent.com/TheFonix/Pterodactyl-Themes/master/Master
 ```
 
 
-### Red Ape (Panel 0.7.13)
+### Red Ape (Panel 0.7.14)
 A Red'er Way Of Life
 ![](https://github.com/TheFonix/Pterodactyl-Themes/blob/master/MasterThemes/RedApe/ss/Red_Ape.png?)
 To Install Run the following command in the Panel Directory!
@@ -74,7 +74,7 @@ curl https://raw.githubusercontent.com/TheFonix/Pterodactyl-Themes/master/Master
 ```
 
 
-### Nothing But Graphite (Panel 0.7.13)
+### Nothing But Graphite (Panel 0.7.14)
 The Black And The White Nothing More
 ![](https://github.com/TheFonix/Pterodactyl-Themes/blob/master/MasterThemes/NothingButGraphite/SS/NothingButGraphite.png?)
 To Install Run the following command in the Panel Directory!
