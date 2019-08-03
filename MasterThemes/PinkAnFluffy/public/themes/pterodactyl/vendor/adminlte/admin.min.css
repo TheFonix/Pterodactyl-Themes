@@ -1385,7 +1385,7 @@ a:hover, a:active, a:focus {
 	position: relative;
 	border-radius: 3px;
 	background:rgba(206, 42, 187, 0.51);
-	border-top: 3px solid #1f3a9b;
+	border-top: 3px solid #161616;
 	margin-bottom: 20px;
 	width: 100%;
 	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1)
@@ -3039,7 +3039,7 @@ table.text-center, table.text-center td, table.text-center th {
 	margin: 0 auto;
 	width: 100px;
 	padding: 3px;
-	border: 3px solid #1f3a9b
+	border: 3px solid #161616
 }
 .profile-username {
 	font-size: 21px;
@@ -4757,7 +4757,7 @@ table.text-center, table.text-center td, table.text-center th {
 	margin-left: 110px
 }
 .img-bordered {
-	border: 3px solid #1f3a9b;
+	border: 3px solid #161616;
 	padding: 3px
 }
 .img-bordered-sm {
