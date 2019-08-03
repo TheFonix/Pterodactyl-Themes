@@ -14,6 +14,14 @@ I'm sure there is something you would love to see changed, head over to the issu
 
 ## Themes Ready for you to use:
 
+### Pink'An'Fluffy (Panel 0.7.14)
+A Touch Of Orange
+![](https://github.com/TheFonix/Pterodactyl-Themes/blob/master/MasterThemes/PinkAnFluffy/ss/TangoTwist.png?)
+To Install Run the following command in the Panel Directory!
+```
+curl https://raw.githubusercontent.com/TheFonix/Pterodactyl-Themes/master/MasterThemes/PinkAnFluffy/build.sh | sh
+```
+
 ### Tango Twist (Panel 0.7.14)
 A Touch Of Orange
 ![](https://github.com/TheFonix/Pterodactyl-Themes/blob/master/MasterThemes/TangoTwist/ss/TangoTwist.png?)
