@@ -16,7 +16,7 @@ I'm sure there is something you would love to see changed, head over to the issu
 
 ### Pink'An'Fluffy (Panel 0.7.14)
 A Touch Of Orange
-![](https://github.com/TheFonix/Pterodactyl-Themes/blob/master/MasterThemes/PinkAnFluffy/ss/TangoTwist.png?)
+![](https://github.com/TheFonix/Pterodactyl-Themes/blob/master/MasterThemes/PinkAnFluffy/ss/PinkAnFluffy.png?)
 To Install Run the following command in the Panel Directory!
 ```
 curl https://raw.githubusercontent.com/TheFonix/Pterodactyl-Themes/master/MasterThemes/PinkAnFluffy/build.sh | sh
