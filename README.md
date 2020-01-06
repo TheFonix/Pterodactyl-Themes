@@ -1,6 +1,4 @@
-## Please Note: Panel Breaking Code has been removed as of 02/07/2019
-![](https://github.com/TheFonix/Pterodactyl-Themes/blob/master/pteroBanner.png?)
-
+# This Theme Repo has not Been Updated to 0.7.15 Do not use these themes if you have updated!
 ## Can I use them?
 Sure! All of the themes you see below are made for you to take and change for your own personal projects! Or if you like them already you can keep them as they are!
 
