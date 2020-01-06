@@ -1,4 +1,6 @@
-# This Theme Repo has not Been Updated to 0.7.15 Do not use these themes if you have updated!
+# This Theme Repo has not Been Updated to 0.7.16 Do not use these themes if you have updated!
+![](https://github.com/TheFonix/Pterodactyl-Themes/blob/master/pteroBanner.png?)
+
 ## Can I use them?
 Sure! All of the themes you see below are made for you to take and change for your own personal projects! Or if you like them already you can keep them as they are!
 
