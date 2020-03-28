@@ -1,4 +1,4 @@
-# This Theme Repo has not Been Updated to 0.7.16 Do not use these themes if you have updated!
+## All Themes have been veryfied to work on the latest version of Pterodactyl (0.7.17)
 ![](https://github.com/TheFonix/Pterodactyl-Themes/blob/master/pteroBanner.png?)
 
 ## Can I use them?
