@@ -1,4 +1,4 @@
-## All Themes have been veryfied to work on the latest version of Pterodactyl (0.7.17)
+## All Themes have been verified to work on the latest version of Pterodactyl (0.7.17)
 ![](https://github.com/TheFonix/Pterodactyl-Themes/blob/master/pteroBanner.png?)
 
 ## Can I use them?
